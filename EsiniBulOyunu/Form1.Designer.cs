@@ -33,7 +33,7 @@
             // 
             // pnlKartlar
             // 
-            pnlKartlar.BackColor = SystemColors.MenuHighlight;
+            pnlKartlar.BackColor = SystemColors.HotTrack;
             pnlKartlar.Location = new Point(12, 12);
             pnlKartlar.Name = "pnlKartlar";
             pnlKartlar.Size = new Size(600, 600);
