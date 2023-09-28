@@ -7,7 +7,7 @@ namespace EsiniBulOyunu
         List<string> resimler = new List<string>();
         List<string> kartlar = new List<string>();
         List<PictureBox> aciklar = new List<PictureBox>();
-
+        int yokEdilenAdet = 0;
         public Form1()
         {
             ResimleriYukle();
@@ -68,6 +68,10 @@ namespace EsiniBulOyunu
                 Application.DoEvents();
                 AciklariGecikmeliYoket();
                 AciklariKapat();
+
+                //Oyun Bitti Mi
+                if (yokEdilenAdet == kartlar.Count)
+                    MessageBox.Show("Oyun bitti.");
             }
 
         }
@@ -78,6 +82,7 @@ namespace EsiniBulOyunu
             foreach (var kutu in aciklar)
             {
                 kutu.Hide();
+                yokEdilenAdet++;
             }
         }
 
