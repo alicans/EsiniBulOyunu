@@ -50,9 +50,9 @@
             // pnlKartlar
             // 
             pnlKartlar.BackColor = Color.Transparent;
-            pnlKartlar.Location = new Point(4, 28);
+            pnlKartlar.Location = new Point(4, 23);
             pnlKartlar.Name = "pnlKartlar";
-            pnlKartlar.Size = new Size(600, 600);
+            pnlKartlar.Size = new Size(600, 601);
             pnlKartlar.TabIndex = 0;
             // 
             // panel1
@@ -195,6 +195,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = Color.WhiteSmoke;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(609, 631);

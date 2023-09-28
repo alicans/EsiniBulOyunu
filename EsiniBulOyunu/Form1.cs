@@ -85,6 +85,7 @@ namespace EsiniBulOyunu
             kartlar.Clear();
             aciklar.Clear();
             panel1.Show();
+            pnlKartlar.BackColor = Color.Transparent;
         }
 
         private void AciklariGecikmeliYoket()
@@ -149,6 +150,7 @@ namespace EsiniBulOyunu
 
         private void OyunuBaslat()
         {
+            pnlKartlar.BackColor = Color.WhiteSmoke;
             SeviyeyeKararVer();
             panel1.Hide();
             KartlariSec();
