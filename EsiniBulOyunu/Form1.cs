@@ -12,8 +12,7 @@ namespace EsiniBulOyunu
         {
             ResimleriYukle();
             InitializeComponent();
-            KartlariSec();
-            KartlariDiz();
+
         }
 
         private void KartlariDiz()
@@ -129,6 +128,28 @@ namespace EsiniBulOyunu
             foreach (FileInfo dosya in dosyalar)
                 resimler.Add("img\\" + dosya.Name);
 
+        }
+
+        private void btnOyunuBaslat_Click(object sender, EventArgs e)
+        {
+            OyunuBaslat();
+        }
+
+        private void OyunuBaslat()
+        {
+            SeviyeyeKararVer();
+            panel1.Hide();
+            KartlariSec();
+            KartlariDiz();
+        }
+
+        private void SeviyeyeKararVer()
+        {
+            if (rb1.Checked) boyut = 2;
+            if (rb2.Checked) boyut = 4;
+            if (rb3.Checked) boyut = 6;
+            if (rb4.Checked) boyut = 8;
+            if (rb5.Checked) boyut = 10;
         }
     }
 }
