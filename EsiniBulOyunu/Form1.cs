@@ -73,13 +73,14 @@ namespace EsiniBulOyunu
                     MessageBox.Show("Oyun bitti.");
                     OyunuSifirla();
                 }
-                    
+
             }
 
         }
 
         private void OyunuSifirla()
         {
+            pnlKartlar.Controls.Clear();
             yokEdilenAdet = 0;
             kartlar.Clear();
             aciklar.Clear();
@@ -161,6 +162,16 @@ namespace EsiniBulOyunu
             if (rb3.Checked) boyut = 6;
             if (rb4.Checked) boyut = 8;
             if (rb5.Checked) boyut = 10;
+        }
+
+        private void btnYeniOyun_Click(object sender, EventArgs e)
+        {
+            OyunuSifirla();
+        }
+
+        private void btnCikis_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

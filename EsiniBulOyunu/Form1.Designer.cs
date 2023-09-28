@@ -37,16 +37,19 @@
             rb4 = new RadioButton();
             rb5 = new RadioButton();
             rb1 = new RadioButton();
-            pnlKartlar.SuspendLayout();
+            menuStrip1 = new MenuStrip();
+            yeniOyunToolStripMenuItem = new ToolStripMenuItem();
+            btnYeniOyun = new ToolStripMenuItem();
+            btnCikis = new ToolStripMenuItem();
             panel1.SuspendLayout();
             gboYeniOyun.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // pnlKartlar
             // 
             pnlKartlar.BackColor = SystemColors.HotTrack;
-            pnlKartlar.Controls.Add(panel1);
-            pnlKartlar.Location = new Point(12, 12);
+            pnlKartlar.Location = new Point(4, 28);
             pnlKartlar.Name = "pnlKartlar";
             pnlKartlar.Size = new Size(600, 600);
             pnlKartlar.TabIndex = 0;
@@ -57,7 +60,7 @@
             panel1.BackColor = SystemColors.ControlLight;
             panel1.Controls.Add(gboYeniOyun);
             panel1.ForeColor = SystemColors.AppWorkspace;
-            panel1.Location = new Point(136, 134);
+            panel1.Location = new Point(134, 151);
             panel1.Name = "panel1";
             panel1.Size = new Size(342, 329);
             panel1.TabIndex = 1;
@@ -152,22 +155,59 @@
             rb1.Text = "Çok Kolay";
             rb1.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { yeniOyunToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(609, 24);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // yeniOyunToolStripMenuItem
+            // 
+            yeniOyunToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { btnYeniOyun, btnCikis });
+            yeniOyunToolStripMenuItem.Name = "yeniOyunToolStripMenuItem";
+            yeniOyunToolStripMenuItem.Size = new Size(48, 20);
+            yeniOyunToolStripMenuItem.Text = "Oyun";
+            // 
+            // btnYeniOyun
+            // 
+            btnYeniOyun.Name = "btnYeniOyun";
+            btnYeniOyun.ShortcutKeys = Keys.F2;
+            btnYeniOyun.Size = new Size(147, 22);
+            btnYeniOyun.Text = "Yeni Oyun";
+            btnYeniOyun.Click += btnYeniOyun_Click;
+            // 
+            // btnCikis
+            // 
+            btnCikis.Name = "btnCikis";
+            btnCikis.ShortcutKeys = Keys.Alt | Keys.F4;
+            btnCikis.Size = new Size(147, 22);
+            btnCikis.Text = "Çıkış";
+            btnCikis.Click += btnCikis_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(622, 623);
+            ClientSize = new Size(609, 631);
+            Controls.Add(panel1);
             Controls.Add(pnlKartlar);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Eşini Bul Oyunu";
-            pnlKartlar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             gboYeniOyun.ResumeLayout(false);
             gboYeniOyun.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -181,5 +221,9 @@
         private RadioButton rb4;
         private RadioButton rb5;
         private RadioButton rb1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem yeniOyunToolStripMenuItem;
+        private ToolStripMenuItem btnYeniOyun;
+        private ToolStripMenuItem btnCikis;
     }
 }
