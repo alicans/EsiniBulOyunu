@@ -12,7 +12,6 @@ namespace EsiniBulOyunu
         {
             ResimleriYukle();
             InitializeComponent();
-
         }
 
         private void KartlariDiz()
