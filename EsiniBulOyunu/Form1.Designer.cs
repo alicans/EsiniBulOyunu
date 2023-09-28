@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pnlKartlar = new Panel();
             panel1 = new Panel();
             gboYeniOyun = new GroupBox();
@@ -48,7 +49,7 @@
             // 
             // pnlKartlar
             // 
-            pnlKartlar.BackColor = SystemColors.HotTrack;
+            pnlKartlar.BackColor = Color.Transparent;
             pnlKartlar.Location = new Point(4, 28);
             pnlKartlar.Name = "pnlKartlar";
             pnlKartlar.Size = new Size(600, 600);
@@ -57,7 +58,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = SystemColors.ControlLight;
+            panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(gboYeniOyun);
             panel1.ForeColor = SystemColors.AppWorkspace;
             panel1.Location = new Point(134, 151);
@@ -67,6 +68,7 @@
             // 
             // gboYeniOyun
             // 
+            gboYeniOyun.BackColor = Color.Transparent;
             gboYeniOyun.Controls.Add(rb2);
             gboYeniOyun.Controls.Add(btnOyunuBaslat);
             gboYeniOyun.Controls.Add(rb3);
@@ -85,10 +87,10 @@
             // 
             rb2.AutoSize = true;
             rb2.FlatStyle = FlatStyle.System;
-            rb2.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rb2.Location = new Point(105, 78);
+            rb2.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            rb2.Location = new Point(90, 61);
             rb2.Name = "rb2";
-            rb2.Size = new Size(97, 41);
+            rb2.Size = new Size(110, 48);
             rb2.TabIndex = 5;
             rb2.Text = "Kolay";
             rb2.UseVisualStyleBackColor = true;
@@ -97,7 +99,7 @@
             // 
             btnOyunuBaslat.FlatStyle = FlatStyle.System;
             btnOyunuBaslat.Font = new Font("Ink Free", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnOyunuBaslat.Location = new Point(34, 257);
+            btnOyunuBaslat.Location = new Point(34, 262);
             btnOyunuBaslat.Name = "btnOyunuBaslat";
             btnOyunuBaslat.Size = new Size(273, 48);
             btnOyunuBaslat.TabIndex = 0;
@@ -110,10 +112,10 @@
             rb3.AutoSize = true;
             rb3.Checked = true;
             rb3.FlatStyle = FlatStyle.System;
-            rb3.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rb3.Location = new Point(105, 119);
+            rb3.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            rb3.Location = new Point(90, 109);
             rb3.Name = "rb3";
-            rb3.Size = new Size(89, 41);
+            rb3.Size = new Size(99, 48);
             rb3.TabIndex = 4;
             rb3.TabStop = true;
             rb3.Text = "Orta";
@@ -123,10 +125,10 @@
             // 
             rb4.AutoSize = true;
             rb4.FlatStyle = FlatStyle.System;
-            rb4.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rb4.Location = new Point(105, 160);
+            rb4.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            rb4.Location = new Point(90, 157);
             rb4.Name = "rb4";
-            rb4.Size = new Size(78, 41);
+            rb4.Size = new Size(88, 48);
             rb4.TabIndex = 3;
             rb4.Text = "Zor";
             rb4.UseVisualStyleBackColor = true;
@@ -135,10 +137,10 @@
             // 
             rb5.AutoSize = true;
             rb5.FlatStyle = FlatStyle.System;
-            rb5.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rb5.Location = new Point(105, 201);
+            rb5.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            rb5.Location = new Point(90, 205);
             rb5.Name = "rb5";
-            rb5.Size = new Size(125, 41);
+            rb5.Size = new Size(143, 48);
             rb5.TabIndex = 2;
             rb5.Text = "Çok Zor";
             rb5.UseVisualStyleBackColor = true;
@@ -147,10 +149,10 @@
             // 
             rb1.AutoSize = true;
             rb1.FlatStyle = FlatStyle.System;
-            rb1.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            rb1.Location = new Point(105, 37);
+            rb1.Font = new Font("Segoe Print", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            rb1.Location = new Point(90, 13);
             rb1.Name = "rb1";
-            rb1.Size = new Size(144, 41);
+            rb1.Size = new Size(165, 48);
             rb1.TabIndex = 1;
             rb1.Text = "Çok Kolay";
             rb1.UseVisualStyleBackColor = true;
@@ -193,6 +195,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(609, 631);
             Controls.Add(panel1);
             Controls.Add(pnlKartlar);
