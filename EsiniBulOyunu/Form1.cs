@@ -171,6 +171,7 @@ namespace EsiniBulOyunu
 
         private void btnCikis_Click(object sender, EventArgs e)
         {
+            //oyundan çýk
             Environment.Exit(0);
         }
     }
