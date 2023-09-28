@@ -3,9 +3,10 @@ namespace EsiniBulOyunu
     public partial class Form1 : Form
     {
         Random rnd = new Random();
-        int boyut = 10;
+        int boyut = 2;
         List<string> resimler = new List<string>();
         List<string> kartlar = new List<string>();
+        List<PictureBox> aciklar = new List<PictureBox>();
 
         public Form1()
         {
@@ -13,8 +14,6 @@ namespace EsiniBulOyunu
             InitializeComponent();
             KartlariSec();
             KartlariDiz();
-
-
         }
 
         private void KartlariDiz()
@@ -34,13 +33,61 @@ namespace EsiniBulOyunu
                     resimKutusu.Size = new Size(gen, yuk);
                     resimKutusu.Left = x * (resimKutusu.Width + bosluk); // x * 50
                     resimKutusu.Top = y * (resimKutusu.Height + bosluk); // y * 50
-                    resimKutusu.ImageLocation = kartlar[i];
+                    resimKutusu.ImageLocation = "back.jpg";
                     resimKutusu.SizeMode = PictureBoxSizeMode.Zoom;
+                    resimKutusu.Click += ResimKutusu_Click;
                     pnlKartlar.Controls.Add(resimKutusu);
                     i++;
                 }
             }
 
+        }
+
+        //sender: týklanan resim kutusunu taþýr.
+        private void ResimKutusu_Click(object sender, EventArgs e)
+        {
+            PictureBox tiklanan = (PictureBox)sender;
+            // eðer ayný karta 2.kez týklandýysa bir þey yapmadan çýk
+            if (aciklar.Count == 1 && aciklar[0] == tiklanan)
+                return;
+
+            if (aciklar.Count == 2)
+                AciklariKapat();
+
+
+            aciklar.Add(tiklanan);
+            int kartIndeks = (int)tiklanan.Tag;
+            string resim = kartlar[kartIndeks];
+            tiklanan.ImageLocation = resim;
+
+            //tiklanan.Hide();
+
+            // 2. kart açýnca yapýlacak eþ kontrol
+            if (aciklar.Count == 2 && aciklar[0].ImageLocation == aciklar[1].ImageLocation)
+            {
+                Application.DoEvents();
+                AciklariGecikmeliYoket();
+                AciklariKapat();
+            }
+
+        }
+
+        private void AciklariGecikmeliYoket()
+        {
+            Thread.Sleep(500);
+            foreach (var kutu in aciklar)
+            {
+                kutu.Hide();
+            }
+        }
+
+        private void AciklariKapat()
+        {
+            foreach (var kutu in aciklar)
+            {
+                kutu.ImageLocation = "back.jpg";
+            }
+            aciklar.Clear();
         }
 
         private void KartlariSec()
