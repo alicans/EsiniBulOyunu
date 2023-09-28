@@ -27,6 +27,9 @@
     <None Update="back.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="img\001-mouse.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
