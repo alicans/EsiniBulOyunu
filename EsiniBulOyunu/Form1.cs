@@ -69,9 +69,21 @@ namespace EsiniBulOyunu
 
                 //Oyun Bitti Mi
                 if (yokEdilenAdet == kartlar.Count)
+                {
                     MessageBox.Show("Oyun bitti.");
+                    OyunuSifirla();
+                }
+                    
             }
 
+        }
+
+        private void OyunuSifirla()
+        {
+            yokEdilenAdet = 0;
+            kartlar.Clear();
+            aciklar.Clear();
+            panel1.Show();
         }
 
         private void AciklariGecikmeliYoket()
@@ -79,7 +91,7 @@ namespace EsiniBulOyunu
             Thread.Sleep(500);
             foreach (var kutu in aciklar)
             {
-                kutu.Hide();
+                pnlKartlar.Controls.Remove(kutu);
                 yokEdilenAdet++;
             }
         }
